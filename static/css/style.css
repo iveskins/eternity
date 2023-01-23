@@ -131,6 +131,9 @@ a img {
     border: none;
 }
 
+
+
+
 .markdown p {
     margin-bottom: 20px;
 }
@@ -348,7 +351,9 @@ section .column img {
 }
 
 .image-box:hover img {
-    transform: scale(1.03);
+    /*transform: scale(1.03);*/
+    filter: hue-rotate(180deg) contrast(100%) invert(100%);
+    -webkit-filter: hue-rotate(180deg) contrast(100%) invert(100%);
 }
 
 .slide-imgs .columns {

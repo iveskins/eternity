@@ -3,10 +3,28 @@
 {{ if .Site.Params.BypassWelcomePage }}
 <head>
 	<meta http-equiv="refresh" content="0; URL={{ relref . .Site.Params.Homepage }}" />
+	<style>
+.background-effect-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.background-effect-container #animation_bg {
+  width: 100%;
+  height: 100%;
+}
+</style>
 </head>
 {{ else }}
-<section class="hero is-fullheight welcome"
-	style="background-image: url({{ "background.jpeg" | absURL }});">
+<section class="hero is-fullheight welcome">
+	<!-- ->style="background-image: url({{ "background.jpeg" | absURL }});"> -->
+	<div class="background-effect-container">
+    <canvas id="animation_bg"></canvas>
+  </div>
+  <script type="text/javascript" src="/js/animate.js"></script>
 	{{ partial "navbar.html" . }}
 	<div class="hero-body has-text-centered">
 		<div class="container">
